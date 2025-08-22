@@ -24,7 +24,7 @@
           <div v-for="(msg, index) in messages" :key="index"
             class="flex" :class="msg.username === username ? 'justify-end' : 'justify-start'">
             <div
-              class="px-3 py-2 rounded-2xl max-w-[70%] shadow"
+              class="px-3 py-2 rounded-2xl max-w-[70%] shadow mb-2"
               :class="msg.username === username ? 'bg-green-500 text-white rounded-br-none' : 'bg-gray-200 text-gray-800 rounded-bl-none'">
               <p class="text-sm"><span v-if="msg.username !== username" class="font-bold">{{ msg.username }}: </span>{{ msg.message }}</p>
               <p class="text-xs opacity-70 mt-1 text-right">{{ formatTime(msg.timestamp) }}</p>

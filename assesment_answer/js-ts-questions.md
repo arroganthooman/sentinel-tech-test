@@ -201,6 +201,10 @@ Bonus if you add some nice, simple animations.
 If you have no experience with web sockets, just make two chat windows side-by-side in the different browser window.  Show messages being sent between the two chat screens.  As new messages come in, old messages slide upwards to make room for new messages.
 If you’d like to be considered for a senior role or lead role, please deploy to AWS and send me a link to your working application.
 
-Answer:
-You can see refer to the chat-app folder/project in this repository.
+**Answer:**
+
+You can refer to the chat-app folder in this repository.
+The app is also deployed to AWS EC2 which can be accessed in the following [link](http://3.107.105.124/).
+
+Or here http://3.107.105.124/ 
 

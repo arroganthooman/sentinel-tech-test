@@ -8,17 +8,17 @@ Mermaid code:
 ```mermaid
 flowchart TD
     U([User Uploads Photo])
-    API[Backend API (Upload Endpoint)]
+    API[Backend API for Upload Endpoint]
     Storage[(Object Storage: S3/GCS/MinIO)]
     DB[(Database: Postgres/MySQL)]
-    Q[[Queue (Redis/RabbitMQ/SQS)]]
+    Q[[Queue]]
     Worker[Worker Service]
     Mod[Moderator Dashboard]
     FE[Frontend Website]
 
     U --> API
     API -->|Save File| Storage
-    API -->|Insert Record (status=PENDING)| DB
+    API -->|Insert Record with Status Pending| DB
     API -->|Push Job| Q
     Q --> Worker
     Worker -->|Resize, AI Moderation, Metadata| DB
@@ -119,5 +119,5 @@ CREATE TABLE moderation_logs (
 
 ## 5. Scalability Notes
 1. Using Object Storage for files
-2. Using queue to tackle high traffic upload activity. It can be replaced by direct processing if the system scale is small.
-3. We can optionally introduce CDN
+2. Using queue to tackle high traffic upload activity. It can be replaced by direct processing if the system scale is still small.
+3. We can optionally introduce CDN for faster retrieval

@@ -10,8 +10,9 @@ Tell me all the security best practices you can think of - start with the most i
    - Apply minimal privilege to a system with RBAC (role-based access control)
 
 2. **Data Protection**  
-   - Encrypt sensitive data in transit (TLS/HTTPS) and at database level using AES-256.
-   - Never store passwords in plain text — always hash with bcrypt/argon2.  
+   - Use HTTPS as the current standard for data transit
+   - Encrypt sensitive information at database level using AES-256.
+   - Never store passwords in plain text — always hash it.
 
 3. **Input Validation & Output Encoding**  
    - Sanitize all user input to prevent SQL Injection and XSS.  
@@ -27,8 +28,8 @@ Tell me all the security best practices you can think of - start with the most i
 
 6. **API & Backend Security**
     - Implement **rate limiting** and throttling to mitigate brute-force or DDoS attacks.  
-    - Require authentication (e.g., JWT, OAuth) for all API endpoints.  
-    - Validate request payloads against a schema.  
+    - Implement authentication (e.g., JWT, OAuth) for all API endpoints.  
+    - Always Validate request payloads. 
 
 7. **Secure Development Practice**
     - Implement automated dynamic security scan (DAST)
