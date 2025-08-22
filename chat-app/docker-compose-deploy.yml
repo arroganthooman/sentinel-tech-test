@@ -9,40 +9,17 @@ services:
       - PORT=3001
     ports:
       - "3001:3001"
-
-  # frontend-builder:
-  #   build:
-  #     context: ./frontend
-  #     args:
-  #       - VITE_BACKEND_URL=http://3.107.105.124:80/api
-  #   container_name: frontend-builder
-  #   restart: "no"
-  #   command: ["true"]
-  frontend-builder:
+  
+  frontend:
     build:
       context: ./frontend
       args:
-        - VITE_BACKEND_URL=http://3.107.105.124:80/api
-    container_name: frontend-builder
-    volumes:
-      - ./frontend/dist:/app/dist   # <-- bring built dist out to host
-    command: sh -c "cp -r /app/dist/* /app/dist-host/"
-
-  nginx:
-    build: ./frontend   # no volume mount needed
+        - VITE_BACKEND_URL=http://3.107.105.124:3001
+    container_name: frontend
     ports:
       - "80:80"
+    depends_on:
+      - backend
 
-
-  # nginx:
-  #   build: ./nginx
-  #   container_name: nginx
-  #   ports:
-  #     - "80:80"
-  #   depends_on:
-  #     - backend
-  #     - frontend-builder
-  #   volumes:
-  #     - ./frontend/dist:/usr/share/nginx/html
 
 

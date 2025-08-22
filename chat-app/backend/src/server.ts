@@ -1,11 +1,19 @@
 import { createServer } from "http";
 import { Server } from "socket.io";
-import express from "express";
+import express, { Response } from "express";
 import dotenv from "dotenv";
 
 dotenv.config()
 
 const app = express();
+
+app.get("/health", (req: any, res: Response) => {
+  console.log("masuk health check")
+  res.json({
+    "status": "healthy"
+  })
+})
+
 const server = createServer(app);
 const io = new Server(server, {
   cors: {
@@ -42,6 +50,8 @@ io.on("connection", (socket) => {
       message,
       timestamp: Date.now(),
     };
+
+    console.log(`${username} sends a message: ${message}`)
 
     rooms[room].push(chatMessage);
     io.to(room).emit("receiveMessage", chatMessage);

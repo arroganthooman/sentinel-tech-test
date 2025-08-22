@@ -51,6 +51,7 @@
 import { ref, onMounted, nextTick } from "vue";
 import { io } from "socket.io-client";
 
+console.log(import.meta.env.VITE_BACKEND_URL)
 const socket = io(import.meta.env.VITE_BACKEND_URL || "http://localhost:3001");
 
 const username = ref("");
