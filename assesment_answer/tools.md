@@ -1,0 +1,13 @@
+Tools (Rate yourself 1 to 5)
+- Git: 4
+- Redis: 4
+- VSCode / JetBrains: 4
+- Linux: 3.5
+- AWS
+    - EC2: 4
+    - Lambda: 3
+    - RDS: 4
+    - Cloudwatch: 2
+    - S3: 4
+- Unit testing: 4
+- Kanban boards: 4
