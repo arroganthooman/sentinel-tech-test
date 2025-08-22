@@ -1,0 +1,33 @@
+version: '3.9'
+
+services:
+  backend:
+    build: ./backend
+    container_name: backend
+    restart: always
+    environment:
+      - PORT=3001
+    ports:
+      - "3001:3001"
+
+  frontend-builder:
+    build:
+      context: ./frontend
+      args:
+        - VITE_BACKEND_URL=http://localhost:80/api
+    container_name: frontend-builder
+    restart: "no"
+    command: ["true"]
+
+  nginx:
+    build: ./nginx
+    container_name: nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+      - frontend-builder
+    volumes:
+      - ./frontend/dist:/usr/share/nginx/html
+
+
