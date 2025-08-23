@@ -203,6 +203,11 @@ If you’d like to be considered for a senior role or lead role, please deploy t
 
 **Answer:**
 
-You can refer to the chat-app folder in this repository.
-The app is also deployed to AWS EC2 which can be accessed in the following [link](http://3.107.105.124/) or here http://3.107.105.124/ . Sorry for building just a very simple chat app with nothing fancy.
+You can refer to the chat-app folder in this repository. The app is built by Vue.js, express.js with socket.io, and redis for the chat storage.
+The app is also deployed to AWS EC2 which can be accessed in the following [link](http://3.107.105.124/) or here http://3.107.105.124/. I don't setup HTTPS for the demo link as currently I don't have active domain. You can also see the demo video [here](https://www.youtube.com/watch?v=fZq_C2b6O3g). Sorry for building just a very simple chat app with nothing fancy.
+
+How to use:
+1. Enter your name
+2. Enter room number that you're going to. Enter the same room number that you will be chatting with your friends.
+3. It supports multiple person chat (like group chat)
 
