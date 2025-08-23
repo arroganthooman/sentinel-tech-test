@@ -204,7 +204,5 @@ If you’d like to be considered for a senior role or lead role, please deploy t
 **Answer:**
 
 You can refer to the chat-app folder in this repository.
-The app is also deployed to AWS EC2 which can be accessed in the following [link](http://3.107.105.124/).
-
-Or here http://3.107.105.124/ 
+The app is also deployed to AWS EC2 which can be accessed in the following [link](http://3.107.105.124/) or here http://3.107.105.124/ . Sorry for building just a very simple chat app with nothing fancy.
 

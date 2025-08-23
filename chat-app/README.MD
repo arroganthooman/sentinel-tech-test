@@ -23,3 +23,8 @@ docker compose up -d --build
 npm run dev
 ```
 3. The app will be run in `localhost:5173`
+
+## How to use
+1. Enter your name
+2. Enter room number that you're going to. Enter the same room number that you will be chatting with your friends.
+3. It supports multiple person chat (like group chat)
