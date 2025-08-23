@@ -4,7 +4,7 @@ A very simple and minimalist chat app where users can chat with multiple user in
 ## Services
 This app consist of 2 services:
 - Frontend (Vue.js)
-- Backend (Node with Express.js and SocketIO)
+- Backend (Node with Express.js, SocketIO, and Redis)
 
 
 ## Installation and Running
@@ -17,12 +17,22 @@ docker compose up -d --build
 3. Frontend will be run in localhost:80
 
 ### Using Node
-1. Make sure you have installed Node.js v22. You can install it using traditional installation or NVM.
-2. Run the following command inside the backend and frontend folder
+1. Make sure you have installed Node.js v22 and redis in your local system. You can install it using traditional installation or NVM.
+
+2. Inside the frontend folder, create .env file and fill it with the following
+```
+VITE_BACKEND_URL="http://localhost:3001"
+```
+3. Inside the backend folder, create .env file and fill it with the following
+```
+PORT=3001
+REDIS_URL=localhost:6379
+```
+4. Run the following command inside the backend and frontend folder to run the services
 ```
 npm run dev
 ```
-3. The app will be run in `localhost:5173`
+5. The frontend will run in `localhost:5173` and the backend will run in `localhost:3001`
 
 ## How to use
 1. Enter your name
